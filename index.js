@@ -56,31 +56,68 @@ findEvenNumber();
 // console.log(callback);
 
 // setTimeout(()=> (console.log("Hello")),2000)
-setTimeout(()=>{
-    console.log("One");
-    setTimeout(()=>{
-        console.log("Two");
-        setTimeout(()=>{
-            console.log("Three");
-            setTimeout(()=>{
-                console.log("Four");
-                setTimeout(()=>{
-                    console.log("Five");
-                    setTimeout(()=>{
-                        console.log("Six");
-                        setTimeout(()=>{
-                            console.log("Seven");
+// setTimeout(()=>{
+//     console.log("One");
+//     setTimeout(()=>{
+//         console.log("Two");
+//         setTimeout(()=>{
+//             console.log("Three");
+//             setTimeout(()=>{
+//                 console.log("Four");
+//                 setTimeout(()=>{
+//                     console.log("Five");
+//                     setTimeout(()=>{
+//                         console.log("Six");
+//                         setTimeout(()=>{
+//                             console.log("Seven");
         
-                        },1000)
+//                         },1000)
         
-                    },1000)
+//                     },1000)
                     
         
-                },1000)
+//                 },1000)
         
-            },1000)
+//             },1000)
         
-        },1000)
-    },1000)
+//         },1000)
+//     },1000)
     
-},2000)
+// },2000)
+
+function sumOfSqrt(a,b){
+    return Math.sqrt(a)+Math.sqrt(b);
+}
+console.log(sumOfSqrt(25,36))
+
+//callback function
+function sum(a,b){
+    return a+b;
+}
+function sumWithMsg(clbk,msg){
+    const result = clbk(20,40)
+    return msg+result
+}
+console.log(sumWithMsg(sum,"Hi...sum"))
+
+
+//Promise in js
+const myPromise = new Promise((resolve,reject)=>{
+    let username = "akash"
+    let pass="123"
+    if(username=="akash" && pass=="1233"){
+        resolve("success");
+
+    }
+    else{
+        reject("invalid user")
+    }
+})
+
+myPromise.then((msg)=>{
+    console.log(msg)
+})
+.catch(msg=>{
+    console.log(msg)
+})
+.finally(()=>console.log("all resource has been closed"))
